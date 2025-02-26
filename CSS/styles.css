@@ -1,0 +1,379 @@
+/* General Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Modern, professional font */
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Soft background for entire page */
+    color: #333; /* Text color */
+    padding: 0;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/hero-pattern.png');
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.hero .hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero img.hero-logo {
+    width: 350px; /* Increased logo size */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero img.hero-logo:hover {
+    transform: scale(1.1); /* Subtle zoom effect */
+    opacity: 0.9;
+}
+
+.hero h1 {
+    font-size: 4.5em; /* Larger font size */
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 2s ease-out;
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #f4f4f4;
+    animation: fadeIn 3s ease-out;
+}
+
+.hero .btn {
+    background: #40d52f;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero .btn:hover {
+    background: #36b42e;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for Hero Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px 20px;
+    background: #f4f4f4;
+    border-bottom: 4px solid #ddd;
+    position: relative;
+    background-image: url('images/feature-bg.jpg'); /* Subtle background image */
+    background-size: cover;
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Dark overlay */
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.feature {
+    text-align: center;
+    max-width: 250px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature i {
+    font-size: 3em;
+    color: #40d52f;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feature p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    background: #ffffff;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.service {
+    max-width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+.service img {
+    width: 100%;
+    border-bottom: 3px solid #ddd;
+}
+
+.service h3 {
+    font-size: 1.6em;
+    margin: 20px;
+    color: #333;
+}
+
+.service p {
+    font-size: 1.1em;
+    color: #666;
+    margin: 0 20px 20px;
+}
+
+/* Reviews Section */
+.reviews {
+    background: #f8f8f8;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.reviews h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.reviews blockquote {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    position: relative;
+    font-style: italic;
+}
+
+.reviews blockquote::before {
+    content: "“";
+    font-size: 3em;
+    color: #40d52f;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+}
+
+.reviews blockquote::after {
+    content: "”";
+    font-size: 3em;
+    color: #40d52f;
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.stat {
+    flex: 1;
+}
+
+.stat h3 {
+    font-size: 3em;
+    margin: 0;
+    font-weight: 700;
+    color: #40d52f;
+}
+
+.stat p {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 4px solid #ffffff;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #f4f4f4;
+}
+
+.contact .btn {
+    background: #40d52f;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact .btn:hover {
+    background: #36b42e;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #40d52f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .service-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .stat {
+        margin-bottom: 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .service h3 {
+        font-size: 1.3em;
+    }
+}
